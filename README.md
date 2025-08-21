@@ -1,2 +1,70 @@
-# beautybox-data-warehouse
-BeautyBox Data Warehouse project; retail analytics pipeline for a fictional cosmetics brand | BeautyBox Data Warehouse โปรเจกต์จำลองระบบวิเคราะห์ข้อมูลของธุรกิจค้าปลีกเครื่องสำอาง โดยใช้ PostgreSQL สร้างฐานและชุดข้อมูลจำลอง+วิเคราะห์ด้วย SQL ดึงข้อมูลเชิงลึกทางธุรกิจ
+#### beautybox-data-warehouse
+# BeautyBox Data Warehouse – v1 Status
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Version](https://img.shields.io/badge/version-v1.0-blue)
+![Database](https://img.shields.io/badge/database-PostgreSQL-336791?logo=postgresql)
+![Queries](https://img.shields.io/badge/analysis-7%20SQL%20queries-brightgreen)
+![Language](https://img.shields.io/badge/language-SQL-lightgrey)
+> BeautyBox Data Warehouse is a portfolio project simulating a retail analytics pipeline for a fictional cosmetics brand. Using PostgreSQL, synthetic sales and customer data are generated and transformed into actionable insights with SQL queries. The project demonstrates data modeling, ETL-like seeding, and business intelligence reporting.
+
+### Project Overview
+This project simulates a retail analytics pipeline for a fictional cosmetics retailer. It uses PostgreSQL as the data warehouse engine, with three main components:
+- **Schema setup** – tables for customers, branches, orders, order_items, products, and categories.
+- **Seed data generation** – synthetic but realistic transactions from Jan–Jul 2025 (≈5,000 orders evenly across 4 branches).
+- **Analysis queries** – a set of SQL scripts answering key business questions.
+---
+### Key features:
+- PostgreSQL schema for retail transactions.
+- Synthetic dataset (5,000 orders across 4 branches, members & general customers).
+- Core analytics queries: revenue growth, AOV, product performance, profit margins, customer segments, and campaign evaluation.
+- Designed for extension into dashboards and advanced analytics in later versions.
+- โครงสร้างฐานข้อมูล (Schema) สำหรับธุรกิจค้าปลีก
+- ชุดข้อมูลจำลอง (5,000 ออเดอร์จาก 4 สาขา ลูกค้าสมาชิกและทั่วไป)
+- คิวรีวิเคราะห์หลัก: การเติบโตของรายได้, ค่าเฉลี่ยการสั่งซื้อ, สินค้าทำกำไรสูงสุด, มาร์จินตามหมวดสินค้า, การเปรียบเทียบสมาชิก vs ลูกค้าทั่วไป และการประเมินผลแคมเปญโปรโมชั่น
+- ออกแบบเพื่อสร้าง Dashboard และการวิเคราะห์ข้อมูลในขั้นต่อไป
+---
+### Current Milestone (v1)
+As of this version:
+- Database initialized with sample data.
+- Seed data validated (distribution of orders, members vs general, branch balance).
+- 7 core business metrics implemented in **analysis.sql.**
+---
+### Key Metrics
+1. Monthly Revenue + MoM Growth (Paid Orders Only)
+   - Tracks revenue trends with specific date range, from Jan–Jul 2025.
+     - Result: Revenue fluctuates between ~930K–1.07M, with natural ups/downs.
+   - Useful for seasonality & growth analysis.
+2. Average Order Value (AOV)
+   - Formula: Revenue ÷ Orders.
+     - Result: ~1,487 THB/order across all segments.
+   - Benchmark for customer spending power.
+3. Top 10 Products by Profit
+   - Rank-ordered products based on profit contribution.
+     - Result: Fragrances dominate the top, followed by skincare.
+   - Helps in product strategy & promotion targeting.
+4. Member vs General Customer Performance
+   - Compares loyalty members vs general shoppers.
+     - Result: Members = 34% of orders, slightly higher AOV (1491 vs 1486).
+   - Validates loyalty program impact.
+5. Profit Margin % by Category
+   - Profit ÷ Sales by category.
+     - Result: Fragrance ~46% (highest), Hair ~33% (lowest).
+   - Guides pricing & category focus.
+6. Branch Leaderboard
+   - Revenue, profit, and margin by branch.
+     - Result: 4 branches perform almost equally due to even seeding.
+   - Infrastructure check — will show variation with real data.
+7. Promo Effect (April vs March & May)
+   - Compare promo month (April) with surrounding months.
+     - Result: April dips to 993K, while Mar/May stay ~1.1M.
+   - Useful for campaign evaluation.
+---
+###Next Steps (v2 Roadmap)
+- Add more realistic variability in branches (so some outperform).
+- Enhance promo seeding (discounted products, campaign tags).
+- Add customer lifetime value (CLV) + retention analysis queries.
+- Results to dashboards (e.g., Metabase, Power BI, or Superset).
+
+### 💡Note for Reviewers:
+This v1 milestone shows a working data pipeline from schema → synthetic data → SQL analysis.
+It demonstrates familiarity with PostgreSQL, data modeling, and business analytics queries.
