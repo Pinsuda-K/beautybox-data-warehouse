@@ -59,7 +59,26 @@ As of this version:
      - Result: April dips to 993K, while Mar/May stay ~1.1M.
    - Useful for campaign evaluation.
 ---
-###Next Steps (v2 Roadmap)
+#### Sample Query Snippets
+WITH m AS (
+  SELECT to_char(order_date, 'YYYY-MM') AS ym,
+         SUM(pay.amount) AS revenue
+  FROM orders o
+  JOIN payments pay USING(order_id)
+  WHERE pay.payment_status='PAID'
+  GROUP BY ym
+)
+SELECT ym,
+       revenue,
+       ROUND(
+         (revenue - LAG(revenue) OVER (ORDER BY ym))
+         * 100.0 / NULLIF(LAG(revenue) OVER (ORDER BY ym),0), 2
+       ) AS mom_growth_pct
+FROM m
+ORDER BY ym;
+
+---
+### Next Steps (v2 Roadmap)
 - Add more realistic variability in branches (so some outperform).
 - Enhance promo seeding (discounted products, campaign tags).
 - Add customer lifetime value (CLV) + retention analysis queries.
