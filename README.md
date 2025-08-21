@@ -29,7 +29,7 @@ As of this version:
 - Seed data validated (distribution of orders, members vs general, branch balance).
 - 7 core business metrics implemented in **analysis.sql.**
 ---
-### Key Metrics
+### Key Metrics:
 1. Monthly Revenue + MoM Growth (Paid Orders Only)
    - Tracks revenue trends with specific date range, from Jan–Jul 2025.
      - Result: Revenue fluctuates between ~930K–1.07M, with natural ups/downs.
@@ -59,7 +59,8 @@ As of this version:
      - Result: April dips to 993K, while Mar/May stay ~1.1M.
    - Useful for campaign evaluation.
 ---
-#### Sample Query Snippets
+#### Sample Query Snippets:
+<details> <summary>Click to view sample SQL query: Monthly Revenue + MoM Growth (Paid Orders Only)</summary><pre> 
 WITH m AS (
   SELECT to_char(order_date, 'YYYY-MM') AS ym,
          SUM(pay.amount) AS revenue
@@ -75,15 +76,16 @@ SELECT ym,
          * 100.0 / NULLIF(LAG(revenue) OVER (ORDER BY ym),0), 2
        ) AS mom_growth_pct
 FROM m
-ORDER BY ym;
-
+ORDER BY ym; 
+</pre></details>
 ---
-### Next Steps (v2 Roadmap)
+
+### Next Steps (v2 Roadmap):
 - Add more realistic variability in branches (so some outperform).
 - Enhance promo seeding (discounted products, campaign tags).
 - Add customer lifetime value (CLV) + retention analysis queries.
 - Results to dashboards (e.g., Metabase, Power BI, or Superset).
-
+---
 ### 💡Note for Reviewers:
 This v1 milestone shows a working data pipeline from schema → synthetic data → SQL analysis.
 It demonstrates familiarity with PostgreSQL, data modeling, and business analytics queries.
