@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# editor files
+*.swp
+*.swo
+*~
+
+# environment / config
+.env
+*.local
+
+# Logs
+*.log
+
+# database dumps
+*.sql.gz
+*.dump
+*.bak
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
