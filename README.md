@@ -32,31 +32,31 @@ As of this version:
 ### Key Metrics:
 1. Monthly Revenue + MoM Growth (Paid Orders Only)
    - Tracks revenue trends with specific date range, from Jan–Jul 2025.
-     - Result: Revenue fluctuates between ~930K–1.07M, with natural ups/downs.
+     - <details> Result: Revenue fluctuates between ~930K–1.07M, with natural ups/downs. </details>
    - Useful for seasonality & growth analysis.
 2. Average Order Value (AOV)
    - Formula: Revenue ÷ Orders.
-     - Result: ~1,487 THB/order across all segments.
+     - <details> Result: ~1,487 THB/order across all segments. </details>
    - Benchmark for customer spending power.
 3. Top 10 Products by Profit
    - Rank-ordered products based on profit contribution.
-     - Result: Fragrances dominate the top, followed by skincare.
+     - <details> Result: Fragrances dominate the top, followed by skincare. </details>
    - Helps in product strategy & promotion targeting.
 4. Member vs General Customer Performance
    - Compares loyalty members vs general shoppers.
-     - Result: Members = 34% of orders, slightly higher AOV (1491 vs 1486).
+     - <details> Result: Members = 34% of orders, slightly higher AOV (1491 vs 1486). </details>
    - Validates loyalty program impact.
 5. Profit Margin % by Category
    - Profit ÷ Sales by category.
-     - Result: Fragrance ~46% (highest), Hair ~33% (lowest).
+     - <details> Result: Fragrance ~46% (highest), Hair ~33% (lowest). </details>
    - Guides pricing & category focus.
 6. Branch Leaderboard
    - Revenue, profit, and margin by branch.
-     - Result: 4 branches perform almost equally due to even seeding.
+     - <details> Result: 4 branches perform almost equally due to even seeding. </details>
    - Infrastructure check — will show variation with real data.
 7. Promo Effect (April vs March & May)
    - Compare promo month (April) with surrounding months.
-     - Result: April dips to 993K, while Mar/May stay ~1.1M.
+     - <details> Result: April dips to 993K, while Mar/May stay ~1.1M. </details>
    - Useful for campaign evaluation.
 ---
 #### Sample Query Snippets:
