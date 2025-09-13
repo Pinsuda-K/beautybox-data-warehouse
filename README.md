@@ -59,8 +59,10 @@ As of this version:
      - <details> Result: April dips to 993K, while Mar/May stay ~1.1M. </details>
    - Useful for campaign evaluation.
 ---
-#### Sample Query Snippets:
-<details> <summary>Click to view sample SQL query: Monthly Revenue + MoM Growth (Paid Orders Only)</summary><pre> 
+#### Query Snippets:
+<summary> Sample SQL query: Monthly Revenue + MoM Growth (Paid Orders Only) </summary>
+
+```sql
 WITH m AS (
   SELECT to_char(order_date, 'YYYY-MM') AS ym,
          SUM(pay.amount) AS revenue
@@ -77,7 +79,7 @@ SELECT ym,
        ) AS mom_growth_pct
 FROM m
 ORDER BY ym; 
-</pre></details>
+```
 ---
 
 ### Next Steps (v2 Roadmap):
