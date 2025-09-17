@@ -5,7 +5,7 @@
 ![Database](https://img.shields.io/badge/database-PostgreSQL-336791?logo=postgresql)
 ![Queries](https://img.shields.io/badge/analysis-7%20SQL%20queries-brightgreen)
 ![Language](https://img.shields.io/badge/language-SQL-lightgrey)
-> BeautyBox Data Warehouse is a portfolio project simulating a retail analytics pipeline for a fictional cosmetics brand. Using PostgreSQL, synthetic sales and customer data are generated and transformed into actionable insights with SQL queries. The project demonstrates data modeling, ETL-like seeding, and business intelligence reporting.
+> BeautyBox Data Warehouse is a project simulating a retail analytics pipeline for a fictional cosmetics brand. Using PostgreSQL, synthetic sales and customer data are generated and transformed into actionable insights with SQL queries. The project demonstrates data modeling, ETL-like seeding, and business intelligence reporting.
 
 ### Project Overview
 This project simulates a retail analytics pipeline for a fictional cosmetics retailer. It uses PostgreSQL as the data warehouse engine, with three main components:
